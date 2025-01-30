@@ -134,6 +134,3 @@ Nous encourageons les contributions à ce projet ! Pour contribuer, veuillez sui
 ## Licence
 
 Ce projet est sous la licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-```
-
-Cette version est plus structurée avec des sections bien définies, ce qui facilite la compréhension et l'utilisation du projet. Est-ce que cela correspond à ce que tu attendais ?
