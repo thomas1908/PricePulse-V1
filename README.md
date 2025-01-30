@@ -1,136 +1,136 @@
 # PricePulse-V1
 
-PricePulse est un modèle d'intelligence artificielle développé pour prédire les mouvements du marché des cryptomonnaies en utilisant des réseaux de neurones récurrents LSTM (Long Short-Term Memory). Le modèle exploite des données historiques, des indicateurs techniques avancés, et des techniques de rééchantillonnage pour effectuer des prédictions fiables sur les tendances du marché.
+PricePulse is an artificial intelligence model developed to predict cryptocurrency market movements using LSTM (Long Short-Term Memory) recurrent neural networks. The model leverages historical data, advanced technical indicators, and resampling techniques to make reliable predictions about market trends.
 
 ## Description
 
-Le modèle PricePulse analyse les séries temporelles des prix des cryptomonnaies et utilise des indicateurs techniques pour prédire si le prix d'une cryptomonnaie va augmenter ou diminuer dans un futur proche. Ce projet met en œuvre un réseau de neurones LSTM bidirectionnel pour apprendre les relations complexes et non linéaires entre ces données.
+The PricePulse model analyzes cryptocurrency price time series and uses technical indicators to predict whether the price of a cryptocurrency will rise or fall in the near future. This project implements a bidirectional LSTM neural network to learn the complex and nonlinear relationships between these data points.
 
-### Objectifs :
-- Prédire la direction du prix des cryptomonnaies (hausse ou baisse).
-- Utiliser des indicateurs techniques populaires tels que le RSI, MACD, EMA, et d'autres pour enrichir les prédictions.
-- Offrir un outil fiable pour les traders souhaitant automatiser et améliorer leurs stratégies d'investissement.
+### Objectives:
+- Predict the direction of cryptocurrency prices (up or down).
+- Use popular technical indicators such as RSI, MACD, EMA, and others to enhance predictions.
+- Provide a reliable tool for traders wishing to automate and improve their investment strategies.
 
-## Fonctionnalités
+## Features
 
-- **Prédiction des tendances du marché** : Prédire si le prix de la cryptomonnaie va augmenter ou diminuer sur la base des données passées.
-- **Utilisation d'indicateurs techniques** : RSI, MACD, SMA, EMA, Bollinger Bands, etc.
-- **Entraînement sur données historiques** : Utilisation des données historiques des cryptomonnaies pour entraîner le modèle.
-- **Rééchantillonnage pour un jeu de données équilibré** : Utilisation de SMOTE pour résoudre les problèmes de déséquilibre de classe.
-- **Évaluation des performances** : Rapport de classification, matrice de confusion, courbe ROC et AUC pour évaluer les résultats du modèle.
+- **Market Trend Prediction**: Predict whether the cryptocurrency price will increase or decrease based on historical data.
+- **Use of Technical Indicators**: RSI, MACD, SMA, EMA, Bollinger Bands, etc.
+- **Training on Historical Data**: Use cryptocurrency historical data to train the model.
+- **Resampling for a Balanced Dataset**: Use SMOTE to address class imbalance issues.
+- **Performance Evaluation**: Classification report, confusion matrix, ROC curve, and AUC to assess the model's results.
 
-## Aperçu
+## Overview
 
-### Architecture du modèle
+### Model Architecture
 
-#### Prétraitement des données :
-- Extraction des indicateurs techniques (RSI, MACD, ATR, etc.).
-- Nettoyage et normalisation des données.
-- Création d'une cible binaire basée sur l'évolution des prix.
+#### Data Preprocessing:
+- Extract technical indicators (RSI, MACD, ATR, etc.).
+- Clean and normalize data.
+- Create a binary target based on price movement.
 
-#### Modèle LSTM :
-- Architecture LSTM bidirectionnelle pour capturer les dépendances temporelles dans les séries de données.
-- Dropout pour éviter le sur-apprentissage.
+#### LSTM Model:
+- Bidirectional LSTM architecture to capture temporal dependencies in the data series.
+- Dropout to prevent overfitting.
 
-#### Entraînement et Validation :
-- Rééchantillonnage des données d'entraînement via SMOTE.
-- Entraînement du modèle avec validation croisée et réduction du taux d'apprentissage.
+#### Training and Validation:
+- Resample training data using SMOTE.
+- Train the model with cross-validation and learning rate reduction.
 
-#### Évaluation :
-- Prédiction des classes (augmentation ou diminution des prix).
-- Calcul des métriques de performance comme l'accuracy, la matrice de confusion, l'AUC.
+#### Evaluation:
+- Predict classes (price increase or decrease).
+- Calculate performance metrics such as accuracy, confusion matrix, and AUC.
 
 ## Installation
 
-### Prérequis
-Avant de commencer, vous devez installer les bibliothèques suivantes :
+### Prerequisites
+Before you begin, you need to install the following libraries:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Bibliothèques principales :
-- **TensorFlow** : Pour l'entraînement du modèle LSTM.
-- **Pandas** : Pour le traitement des données.
-- **NumPy** : Pour les opérations numériques.
-- **TA-Lib** : Pour calculer des indicateurs techniques.
-- **Scikit-learn** : Pour la gestion des données et des outils d'évaluation.
-- **Imbalanced-learn** : Pour le rééchantillonnage SMOTE.
+#### Main Libraries:
+- **TensorFlow**: For training the LSTM model.
+- **Pandas**: For data processing.
+- **NumPy**: For numerical operations.
+- **TA-Lib**: To compute technical indicators.
+- **Scikit-learn**: For data management and evaluation tools.
+- **Imbalanced-learn**: For SMOTE resampling.
 
-### Cloner le dépôt
-Clonez ce dépôt pour commencer à travailler avec le projet :
+### Clone the Repository
+Clone this repository to start working with the project:
 
 ```bash
 git clone https://github.com/thomas1908/PricePulse-V1.git
 cd PricePulse
 ```
 
-## Préparation des données
+## Data Preparation
 
-Téléchargez ou générez vos propres données historiques des cryptomonnaies (ex : Bitcoin, Ethereum) en format CSV, incluant des colonnes comme `timestamp`, `open`, `close`, `high`, `low`, et `volume`.
+Download or generate your own cryptocurrency historical data (e.g., Bitcoin, Ethereum) in CSV format, including columns like `timestamp`, `open`, `close`, `high`, `low`, and `volume`.
 
-Placez vos données dans le dossier `model/`.
+Place your data in the `model/` folder.
 
-### Format du fichier `historical_data.csv` :
+### `historical_data.csv` File Format:
 | timestamp            | open  | high  | low   | close | volume |
 |----------------------|-------|-------|-------|-------|--------|
 | 2025-01-01 00:00:00  | 30000 | 30500 | 29500 | 30050 | 1200   |
 
-## Utilisation
+## Usage
 
-### 1. Préparation des données
-Le fichier `historical_data.csv` doit être formaté comme suit :
+### 1. Data Preparation
+The `historical_data.csv` file should be formatted as follows:
 
 ```csv
 timestamp, open, high, low, close, volume
 2025-01-01 00:00:00, 30000, 30500, 29500, 30050, 1200
 ```
 
-### 2. Exécution du modèle
-Pour entraîner le modèle, exécutez le script principal `model_training.py` :
+### 2. Running the Model
+To train the model, run the main script `model_training.py`:
 
 ```bash
 python model/model_training.py
 ```
 
-Cela exécutera les étapes suivantes :
-- Chargement des données.
-- Application des indicateurs techniques.
-- Entraînement du modèle LSTM.
-- Évaluation du modèle avec des métriques comme l'exactitude, la matrice de confusion et l'AUC.
+This will execute the following steps:
+- Load the data.
+- Apply technical indicators.
+- Train the LSTM model.
+- Evaluate the model using metrics like accuracy, confusion matrix, and AUC.
 
-### 3. Sauvegarde et chargement du modèle
-Le modèle entraîné est sauvegardé dans le fichier `model/trading_model_nn.h5`. Vous pouvez également charger ce modèle pour effectuer des prédictions sur de nouvelles données :
+### 3. Save and Load the Model
+The trained model is saved in the `model/trading_model_nn.h5` file. You can also load this model to make predictions on new data:
 
 ```python
 from tensorflow.keras.models import load_model
 
-# Charger le modèle entraîné
+# Load the trained model
 model = load_model('model/trading_model_nn.h5')
 
-# Faire des prédictions
+# Make predictions
 predictions = model.predict(new_data)
 ```
 
-## Évaluation du Modèle
+## Model Evaluation
 
-Une fois l'entraînement terminé, le modèle est évalué en utilisant les données de test. Les principales métriques incluent :
+Once training is complete, the model is evaluated using test data. Key metrics include:
 
-- **Accuracy** : Taux de prédictions correctes.
-- **Classification Report** : Précision, rappel et F-mesure.
-- **Confusion Matrix** : Visualisation des prédictions vs valeurs réelles.
-- **Courbe ROC et AUC** : Mesure de la qualité du modèle.
+- **Accuracy**: The rate of correct predictions.
+- **Classification Report**: Precision, recall, and F1-score.
+- **Confusion Matrix**: Visualization of predictions vs. actual values.
+- **ROC Curve and AUC**: Measures the model's quality.
 
-## Contribuer
+## Contribute
 
-Nous encourageons les contributions à ce projet ! Pour contribuer, veuillez suivre les étapes suivantes :
+We welcome contributions to this project! To contribute, please follow these steps:
 
-1. Forkez ce dépôt.
-2. Créez une branche pour votre fonctionnalité (`git checkout -b ma-fonctionnalité`).
-3. Commitez vos modifications (`git commit -am 'Ajout d’une fonctionnalité'`).
-4. Poussez sur la branche (`git push origin ma-fonctionnalité`).
-5. Ouvrez une pull request.
+1. Fork this repository.
+2. Create a branch for your feature (`git checkout -b my-feature`).
+3. Commit your changes (`git commit -am 'Added a feature'`).
+4. Push to the branch (`git push origin my-feature`).
+5. Open a pull request.
 
-## Licence
+## License
 
-Ce projet est sous la licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
