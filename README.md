@@ -1,3 +1,12 @@
+<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-disable html -->
+<!-- markdownlint-disable no-duplicate-header -->
+
+<div align="center">
+  <img src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/logo.svg?raw=true" width="60%" alt="DeepSeek-V3" />
+</div>
+<hr>
+
 # PricePulse-V1
 
 PricePulse is an artificial intelligence model developed to predict cryptocurrency market movements using LSTM (Long Short-Term Memory) recurrent neural networks. The model leverages historical data, advanced technical indicators, and resampling techniques to make reliable predictions about market trends.
