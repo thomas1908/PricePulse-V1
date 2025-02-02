@@ -3,6 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 <div align="center">
+  <img src="https://github.com/thomas1908/PricePulse-V1/blob/master/Logo_name.svg?raw=true" width="60%" alt="PricePulse-V1" />
 </div>
 <hr>
 
