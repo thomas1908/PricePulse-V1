@@ -1,6 +1,6 @@
 # Configuration du projet
-DATA_PATH = '../data/historical_data.csv'  # Chemin vers les données historiques
-MODEL_PATH = 'trading_model.pkl'  # Chemin pour sauvegarder le modèle
+DATA_PATH = '../data/historical_data.csv'
+MODEL_PATH = 'trading_model.pkl'
 
 # Paramètres du modèle
 MODEL_PARAMS = {
