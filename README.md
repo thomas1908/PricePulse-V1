@@ -7,7 +7,8 @@
 </div>
 <hr>
 
-# PricePulse-V1
+# PricePulse-V1 (V2 in progress)
+## (just a demonstration to practice and create a base for the project)
 
 PricePulse is an artificial intelligence model developed to predict cryptocurrency market movements using LSTM (Long Short-Term Memory) recurrent neural networks. The model leverages historical data, advanced technical indicators, and resampling techniques to make reliable predictions about market trends.
 
